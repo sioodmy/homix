@@ -59,12 +59,13 @@ in {
 
     homix-link = let
       files = map (f: ''
-        ln -sf ${f.source} $HOME/${f.path}
+        FILE=$HOME/${f.path}
+        mkdir -p $(dirname $FILE)
+        ln -sf ${f.source} $FILE
       '') (attrValues config.homix);
     in
       pkgs.writeShellScript "homix-link" ''
         #!/bin/sh
-
         ${builtins.concatStringsSep "\n" files}
       '';
 
