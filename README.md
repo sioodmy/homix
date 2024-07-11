@@ -1,6 +1,6 @@
 # Homix
 
-Simplest way to manage symlinks from the nix store to your home directory
+Simplest way to manage symlinks from the nix store to your home directory. Written in under 100 lines of code.
 
 ## Why?
 
